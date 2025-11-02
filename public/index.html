@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Mesh Multi-User WebRTC</title>
+  <style>
+    body { font-family: Arial; padding: 12px; }
+    #videos { display:flex; flex-wrap:wrap; gap:8px; }
+    video { width: 240px; height: 160px; background:#000; }
+    #chat { border: 1px solid #ddd; padding:8px; width: 400px; height: 300px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <h2>Room-based Multi-user Demo (Mesh)</h2>
+  <div>
+    <input id="roomInput" placeholder="room name" value="test-room"/>
+    <input id="nameInput" placeholder="your name" value="Aparna"/>
+    <button id="joinBtn">Join</button>
+    <button id="leaveBtn">Leave</button>
+    <button id="muteBtn">Mute</button>
+    <button id="videoBtn">Stop Video</button>
+  </div>
+
+  <h3>Local</h3>
+  <video id="localVideo" autoplay muted playsinline></video>
+
+  <h3>Peers</h3>
+  <div id="videos"></div>
+
+  <h3>Chat</h3>
+  <div id="chat"></div>
+  <input id="chatInput" placeholder="message..." />
+  <button id="sendChat">Send</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
